@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="Tab1" text="登录">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="500.0">
+                            <children>
+                                <Button layoutX="283.0" layoutY="213.0" mnemonicParsing="false" onAction="#Login" prefHeight="117.0" prefWidth="214.0" text="登录" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="Tab2" text="消息群发">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="500.0">
+                            <children>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="385.0" prefWidth="617.0">
+                                    <children>
+                                        <Label contentDisplay="TOP" layoutX="271.0" layoutY="14.0" prefHeight="41.0" prefWidth="230.0" text="请选择你需要的功能项">
+                                            <font>
+                                                <Font size="23.0" />
+                                            </font>
+                                        </Label>
+                                        <TabPane layoutY="63.0" prefHeight="510.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+                                            <tabs>
+                                                <Tab text="消息群发（慎用）">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="208.0" prefWidth="583.0">
+                                                            <children>
+                                                                <Button layoutX="590.0" layoutY="295.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="108.0" text="群发开始" textFill="RED" />
+                                                                <Text id="RemindUserText" layoutX="590.0" layoutY="409.0" />
+                                                                <Label layoutX="96.0" layoutY="94.0" text="群发内容：">
+                                                                    <font>
+                                                                        <Font size="28.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextArea layoutX="236.0" layoutY="100.0" prefHeight="178.0" prefWidth="349.0" />
+                                                                <Label layoutX="96.0" layoutY="26.0" prefHeight="15.0" prefWidth="317.0" text="*现阶段消息群发是真的群发...我劝你别用..." />
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab text="消息骚扰">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <TableView fx:id="FriendsList2" layoutX="115.0" layoutY="114.0" prefHeight="253.0" prefWidth="570.0">
+                                                                    <columns>
+                                                                        <TableColumn fx:id="FriendsListName2" prefWidth="75.0" text="微信名" />
+                                                                        <TableColumn fx:id="FriendsListSex2" prefWidth="75.0" text="性别" />
+                                                                        <TableColumn fx:id="FriendsListSig2" prefWidth="400.0" text="签名" />
+                                                                    </columns>
+                                                                </TableView>
+                                                                <Label layoutX="146.0" layoutY="43.0" text="骚扰内容" />
+                                                                <TextField fx:id="HarassContent2_2" layoutX="211.0" layoutY="39.0" prefHeight="23.0" prefWidth="320.0" />
+                                                                <Button layoutX="621.0" layoutY="394.0" mnemonicParsing="false" onAction="#Harass" text="启动" />
+                                                                <TextField fx:id="HarassNum2_2" layoutX="211.0" layoutY="78.0" prefHeight="23.0" prefWidth="320.0" />
+                                                                <Label layoutX="146.0" layoutY="82.0" text="骚扰次数" />
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab text="定时消息">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <TableView fx:id="FriendsList3" layoutX="115.0" layoutY="114.0" prefHeight="253.0" prefWidth="570.0">
+                                                                    <columns>
+                                                                        <TableColumn fx:id="FriendsListName3" prefWidth="75.0" text="微信名" />
+                                                                        <TableColumn fx:id="FriendsListSex3" prefWidth="75.0" text="性别" />
+                                                                        <TableColumn fx:id="FriendsListSig3" prefWidth="400.0" text="签名" />
+                                                                    </columns>
+                                                                </TableView>
+                                                                <Button layoutX="585.0" layoutY="51.0" mnemonicParsing="false" onAction="#ChangeTheRobot" text="启动脚本" />
+                                                                <TextField fx:id="Tuling_key3_31" layoutX="232.0" layoutY="51.0" prefHeight="23.0" prefWidth="320.0" />
+                                                                <Label layoutX="90.0" layoutY="55.0" text="多久以后发送（秒数）" />
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                            </tabs>
+                                        </TabPane>
+                                        <Button layoutX="663.0" layoutY="23.0" mnemonicParsing="false" onAction="#CloseAllProcess" text="关闭所有进程" />
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="Tab3" text="自动回复">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="385.0" prefWidth="617.0">
+                            <children>
+                                <Label contentDisplay="TOP" layoutX="271.0" layoutY="14.0" prefHeight="41.0" prefWidth="230.0" text="请选择你需要的功能项">
+                                    <font>
+                                        <Font size="23.0" />
+                                    </font>
+                                </Label>
+                                <TabPane layoutY="63.0" prefHeight="510.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="全体自动回复">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="208.0" prefWidth="583.0">
+                                                    <children>
+                                                        <Button layoutX="590.0" layoutY="295.0" mnemonicParsing="false" onAction="#AutoReplyStart" prefHeight="46.0" prefWidth="108.0" text="自动回复开始" textFill="RED" />
+                                                        <Button layoutX="590.0" layoutY="354.0" mnemonicParsing="false" onAction="#CloseAutoReply" prefHeight="46.0" prefWidth="108.0" text="自动回复关闭" />
+                                                        <Text id="RemindUserText" fx:id="RemindUserText" layoutX="590.0" layoutY="409.0" />
+                                                        <Label layoutX="96.0" layoutY="94.0" text="回复内容：">
+                                                            <font>
+                                                                <Font size="28.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <TextArea fx:id="Reply_All_Textarea" layoutX="236.0" layoutY="100.0" prefHeight="178.0" prefWidth="349.0" />
+                                                        <TextField fx:id="ProcessName_3_1" layoutX="236.0" layoutY="59.0" />
+                                                        <Label layoutX="96.0" layoutY="48.0" text="进程名：">
+                                                            <font>
+                                                                <Font size="28.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label layoutX="416.0" layoutY="65.0" text="*最好写一个，不写就只能启动一个脚本" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="自定义自动回复">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Button layoutX="712.0" layoutY="3.0" mnemonicParsing="false" onAction="#GetAllFriendsMsg" text="更新好友信息" />
+                                                        <TableView fx:id="FriendsList" layoutX="115.0" layoutY="114.0" prefHeight="253.0" prefWidth="570.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="FriendsListName" prefWidth="75.0" text="微信名" />
+                                                                <TableColumn fx:id="FriendsListSex" prefWidth="75.0" text="性别" />
+                                                                <TableColumn fx:id="FriendsListSig" prefWidth="400.0" text="签名" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <Label layoutX="143.0" layoutY="54.0" text="回复内容" />
+                                                        <TextField fx:id="Resp_content3_2" layoutX="211.0" layoutY="50.0" prefHeight="23.0" prefWidth="320.0" />
+                                                        <Button layoutX="621.0" layoutY="394.0" mnemonicParsing="false" onAction="#AutoReplyOneFriendStart" text="启动" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="变身图灵机器人">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="FriendsList1" layoutX="115.0" layoutY="114.0" prefHeight="253.0" prefWidth="570.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="FriendsListName1" prefWidth="75.0" text="微信名" />
+                                                                <TableColumn fx:id="FriendsListSex1" prefWidth="75.0" text="性别" />
+                                                                <TableColumn fx:id="FriendsListSig1" prefWidth="400.0" text="签名" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <Button layoutX="572.0" layoutY="51.0" mnemonicParsing="false" onAction="#ChangeTheRobot" text="变身图灵机器人" />
+                                                        <Label layoutX="83.0" layoutY="22.0" prefHeight="15.0" prefWidth="317.0" text="*秘钥是需要申请的，请自行去图灵机器人官网申请" />
+                                                        <TextField fx:id="Tuling_key3_3" layoutX="211.0" layoutY="51.0" prefHeight="23.0" prefWidth="320.0" />
+                                                        <Label layoutX="149.0" layoutY="55.0" text="秘钥" />
+                                                        <Button layoutX="712.0" layoutY="3.0" mnemonicParsing="false" onAction="#GetAllFriendsMsg" text="更新好友信息" />
+                                                    </children></AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="变身复读机0_0">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Button layoutX="211.0" layoutY="56.0" mnemonicParsing="false" onAction="#RepeatMachine" prefHeight="72.0" prefWidth="302.0" text="人类的本质就是复读机，全体复读功能开启！">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Button>
+                                                    </children></AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                                <Button layoutX="663.0" layoutY="23.0" mnemonicParsing="false" onAction="#CloseAllProcess" text="关闭所有进程" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="Tab21" text="进程状况">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="500.0">
+                            <children>
+                                <Button layoutX="64.0" layoutY="64.0" mnemonicParsing="false" onAction="#UpdateAllProcess" text="更新所有进程" />
+                                <TableView fx:id="ProcessList" layoutX="108.0" layoutY="122.0" prefHeight="284.0" prefWidth="570.0">
+                                    <columns>
+                                        <TableColumn fx:id="ProcessName" prefWidth="148.0" text="进程名" />
+                                        <TableColumn fx:id="ProcessAddress" prefWidth="421.0" text="进程指针地址" />
+                                    </columns>
+                                </TableView>
+                                <Button layoutX="604.0" layoutY="446.0" mnemonicParsing="false" onAction="#test111" text="终止进程" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
